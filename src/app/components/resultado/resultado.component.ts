@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HeroesService } from '../../services/heroes.service';
+
 
 @Component({
   selector: 'app-resultado',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadoComponent implements OnInit {
 
-  constructor() { }
+  heroes:any[] = [];
+  termino: string;
+
+  constructor( private activatedRouter: ActivatedRoute,
+              private _heroeService: HeroesService ) {
+
+   }
 
   ngOnInit(): void {
+    this.activatedRouter.params.subscribe(
+      params => {
+        this.termino = params['termino']
+        this.heroes = this._heroeService.buscarHeroes( params['termino'] );
+      });
   }
 
 }

@@ -22,7 +22,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void { //Se ejecuta cuando la página ya esta renderizada
     this.heroes = this._heroesService.getHeroes();
-    // console.log(this.heroes);
   }
 
   verHeroe( idx: number ){
