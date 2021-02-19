@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() {
+
+   }
+
+   ngOnInit(): void {
+   }
+
+   buscarHeroe(valor: string) {
+     console.log(valor);
   }
+
 
 }
