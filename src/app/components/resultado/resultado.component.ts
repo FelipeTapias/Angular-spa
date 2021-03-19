@@ -23,7 +23,7 @@ export class ResultadoComponent implements OnInit {
       params => {
         this.termino = params['termino'];
         this.heroes = this._heroeService.buscarHeroes( params['termino'] );
-        console.log(this.heroes);
+        // console.log(this.heroes);
       });
   }
 
