@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
 
@@ -21,8 +21,9 @@ export class ResultadoComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRouter.params.subscribe(
       params => {
-        this.termino = params['termino']
+        this.termino = params['termino'];
         this.heroes = this._heroeService.buscarHeroes( params['termino'] );
+        console.log(this.heroes);
       });
   }
 
